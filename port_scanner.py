@@ -15,3 +15,7 @@ def port_scanning(target_ip, start_port, end_port):
         my_socket.close() # always release socket
     
     return open_ports   
+
+if __name__ == "__main__":
+    open_ports = port_scanning("127.0.0.1", 9990, 9999) # choose port range here
+    print(f"open ports found: {open_ports}") # display open ports, [] if none
