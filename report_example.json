@@ -1,0 +1,12 @@
+[
+   {
+      "port": 9998,
+      "banner": null
+   },
+   {
+      "port": 9999,
+      "banner": "[testbanner]"
+   }
+]
+
+
