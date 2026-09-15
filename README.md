@@ -10,14 +10,46 @@ Minimal personal cybersecurity toolkit to explore the fundamentals of TCP reconn
 - [X] Single port connectivity check
 - [X] Port range scanning
 - [X] Banner grabbing from open ports
-- [ ] JSON report
-- [ ] main.py
+- [X] JSON report
+- [x] main.py
 - [ ] *TBD*
 
 ## Overview
 
-| module | purpose |
+| Module | Purpose |
 |--------|---------|
 | [`port_scanner.py`](port_scanner.py) | scan TCP port ranges, return list of open ports |
 | [`banner_grabber.py`](banner_grabber.py) | connect to open ports and retrieve service banners |
 | [`test_servers.py`](test_servers.py) | parallel test servers for validation |
+| [`report.py`](report.py) | write results to JSON file |
+| [`main.py`](main.py) | manages scanner, grabber, and report |
+
+## How to use
+
+1. **Start test servers** (terminal 1):
+   ```bash
+   python test_servers.py
+   ```
+
+2. **Run reconnaissance** (terminal 2):
+   ```bash
+   python main.py
+   ```
+
+3. **Check JSON report**
+   ```bash
+   cat recon_report.json
+   ```
+  
+#### Report example:
+```json
+[
+    {
+        "port": 9999,
+        "banner": "[testbanner]"
+    },
+    {
+        "port": 9998,
+        "banner": null
+    }
+]
