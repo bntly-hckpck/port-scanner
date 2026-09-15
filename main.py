@@ -1,5 +1,6 @@
 from port_scanner import port_scanning
 from banner_grabber import banner_grabbing
+from report import report_writing
 
 def main():
     # hardcoded for now
@@ -18,7 +19,9 @@ def main():
         result.append({"port" : port, "banner" : banner}) # dict for key-value pair
         print(f"{port}: {banner}")
 
+    # report writing
+    report_writing(result)
+
 if __name__ == "__main__":
     main()
-
 
